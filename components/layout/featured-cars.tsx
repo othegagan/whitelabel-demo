@@ -1,8 +1,32 @@
 import { Star } from 'lucide-react';
-import Image from 'next/image';
 import { Badge } from '../ui/badge';
 import { Button } from '../ui/button';
 import { Card, CardFooter, CardHeader, CardTitle } from '../ui/card';
+
+const data = [
+    {
+        name: 'Toyota Camry',
+        type: 'Sedan',
+        price: '45',
+        image: 'https://akm-img-a-in.tosshub.com/indiatoday/images/story/202201/2022_Toyota_Camry_Hybrid-_Exte.jpg?size=690:388',
+        features: ['5 Seats', 'Automatic', 'Hybrid']
+    },
+    {
+        name: 'Honda CR-V',
+        type: 'SUV',
+        price: '65',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Honda_CR-V_e-HEV_Elegance_AWD_%28VI%29_%E2%80%93_f_14072024.jpg/1200px-Honda_CR-V_e-HEV_Elegance_AWD_%28VI%29_%E2%80%93_f_14072024.jpg',
+        features: ['5 Seats', 'Automatic', 'AWD']
+    },
+    {
+        name: 'Tesla Model 3',
+        type: 'Electric',
+        price: '85',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp_afsLjqfFy0Bz48yT3nZ_SriLehDKNPs0s1_lqfQZA&s&ec=72940543',
+        features: ['5 Seats', 'Autopilot', 'Electric']
+    }
+];
+
 export default function FeaturedCars() {
     return (
         <section className='py-16'>
@@ -13,32 +37,10 @@ export default function FeaturedCars() {
                 </div>
 
                 <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
-                    {[
-                        {
-                            name: 'Toyota Camry',
-                            type: 'Sedan',
-                            price: '45',
-                            image: '/placeholder.svg?height=200&width=300',
-                            features: ['5 Seats', 'Automatic', 'Hybrid']
-                        },
-                        {
-                            name: 'Honda CR-V',
-                            type: 'SUV',
-                            price: '65',
-                            image: '/placeholder.svg?height=200&width=300',
-                            features: ['5 Seats', 'Automatic', 'AWD']
-                        },
-                        {
-                            name: 'Tesla Model 3',
-                            type: 'Electric',
-                            price: '85',
-                            image: '/placeholder.svg?height=200&width=300',
-                            features: ['5 Seats', 'Autopilot', 'Electric']
-                        }
-                    ].map((car, index) => (
-                        <Card key={index} className='overflow-hidden transition-all hover:shadow-lg'>
-                            <div className='relative aspect-video'>
-                                <Image src={car.image || '/placeholder.svg'} alt={car.name} fill className='object-cover' />
+                    {data.map((car, index) => (
+                        <Card key={index} className='h-fit overflow-hidden p-0 transition-all hover:shadow-lg'>
+                            <div className='relative aspect-video h-44'>
+                                <img src={car.image || '/placeholder.svg'} alt={car.name} className='size-full object-cover' />
                                 <Badge className='absolute top-2 right-2'>{car.type}</Badge>
                             </div>
                             <CardHeader>
@@ -57,7 +59,7 @@ export default function FeaturedCars() {
                                     ))}
                                 </div>
                             </CardHeader>
-                            <CardFooter className='flex justify-between'>
+                            <CardFooter className='flex justify-between pb-6'>
                                 <div>
                                     <span className='font-bold text-2xl'>${car.price}</span>
                                     <span className='text-muted-foreground'>/day</span>

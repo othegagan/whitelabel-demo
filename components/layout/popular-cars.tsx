@@ -1,6 +1,20 @@
-import Image from 'next/image';
 import { Button } from '../ui/button';
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from '../ui/card';
+
+const data = [
+    {
+        name: 'Economy',
+        image: 'https://www.usnews.com/object/image/00000191-d833-d3d1-a5ff-de3321a60001/large-62162-2025elantra.jpg?update-time=1725909114831&size=responsive640',
+        price: '29'
+    },
+    {
+        name: 'SUV',
+        image: 'https://www.topgear.com/sites/default/files/2024/02/2023-GMC-Yukon-Denali-Ultimate-exteriorx3000.jpg',
+        price: '49'
+    },
+    { name: 'Luxury', image: 'https://www.topgear.com/sites/default/files/news-listicle/image/2023/09/LEAD.jpg', price: '89' },
+    { name: 'Electric', image: 'https://www.kbb.com/wp-content/uploads/2024/04/2024-tesla-model-y-red-driving-front-3qtr.jpg', price: '59' }
+];
 
 export default function PopularCars() {
     return (
@@ -14,21 +28,16 @@ export default function PopularCars() {
                 </div>
 
                 <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4'>
-                    {[
-                        { name: 'Economy', image: '/placeholder.svg?height=200&width=300', price: '29' },
-                        { name: 'SUV', image: '/placeholder.svg?height=200&width=300', price: '49' },
-                        { name: 'Luxury', image: '/placeholder.svg?height=200&width=300', price: '89' },
-                        { name: 'Electric', image: '/placeholder.svg?height=200&width=300', price: '59' }
-                    ].map((car, index) => (
-                        <Card key={index} className='overflow-hidden transition-all hover:shadow-lg'>
-                            <div className='relative aspect-[4/3]'>
-                                <Image src={car.image || '/placeholder.svg'} alt={car.name} fill className='object-cover' />
+                    {data.map((car, index) => (
+                        <Card key={index} className='h-fit overflow-hidden p-0 transition-all hover:shadow-lg'>
+                            <div className='relative aspect-[16/9] h-44'>
+                                <img src={car.image || '/placeholder.svg'} alt={car.name} className='size-full object-cover' />
                             </div>
                             <CardHeader>
                                 <CardTitle>{car.name}</CardTitle>
                                 <CardDescription>Starting from ${car.price}/day</CardDescription>
                             </CardHeader>
-                            <CardFooter>
+                            <CardFooter className='pb-6'>
                                 <Button variant='outline' className='w-full'>
                                     View Cars
                                 </Button>
