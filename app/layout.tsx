@@ -3,6 +3,8 @@ import Navbar from '@/components/layout/navbar';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
+import { NuqsAdapter } from 'nuqs/adapters/next/app';
+import { Toaster } from 'sonner';
 
 const geistSans = Geist({
     variable: '--font-geist-sans',
@@ -28,11 +30,14 @@ export default function RootLayout({
     return (
         <html lang='en' suppressHydrationWarning className='scroll-smooth'>
             <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-                <div className='flex min-h-screen flex-col'>
-                    <Navbar />
-                    {children}
-                    <Footer />
-                </div>
+                <NuqsAdapter>
+                    <div className='flex min-h-screen flex-col'>
+                        <Navbar />
+                        {children}
+                        <Footer />
+                    </div>
+                    <Toaster richColors={true} position='bottom-right' />
+                </NuqsAdapter>
             </body>
         </html>
     );
