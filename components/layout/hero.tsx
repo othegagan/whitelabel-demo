@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Suspense } from 'react';
 import SearchComponent from './search/search-component';
 
 export default function HeroSection() {
@@ -25,7 +26,9 @@ export default function HeroSection() {
 
                 {/* Search Form */}
                 <div className='mt-8 max-w-7xl rounded-lg bg-white p-4 shadow-lg md:mt-12 '>
-                    <SearchComponent />
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <SearchComponent />
+                    </Suspense>
                 </div>
             </div>
         </section>
