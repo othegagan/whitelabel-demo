@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { Button } from '../ui/button';
 
 export default function Navbar() {
     return (
@@ -25,12 +24,12 @@ export default function Navbar() {
                         FAQs
                     </Link>
                 </nav>
-                <div className='flex items-center gap-4'>
+                {/* <div className='flex items-center gap-4'>
                     <Button variant='ghost' className='hidden md:flex'>
                         Sign In
                     </Button>
                     <Button>Register</Button>
-                </div>
+                </div> */}
             </div>
         </header>
     );
