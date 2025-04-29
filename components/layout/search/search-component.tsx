@@ -65,7 +65,7 @@ export default function SearchComponent() {
             return;
         }
 
-        const newUrl = `https://bundee-webdriver-qa.vercel.app/vehicles?city=${city}&latitude=${latitude}&longitude=${longitude}&startDate=${startDate}&endDate=${endDate}&startTime=${startTime}&endTime=${endTime}&isAirport=${isAirport}&isMapSearch=${isMapSearch}&zoomLevel=${zoomLevel}`;
+        const newUrl = `https://white-label-demo-2.vercel.app/vehicles?city=${city}&latitude=${latitude}&longitude=${longitude}&startDate=${startDate}&endDate=${endDate}&startTime=${startTime}&endTime=${endTime}&isAirport=${isAirport}&isMapSearch=${isMapSearch}&zoomLevel=${zoomLevel}`;
 
         window.open(newUrl, '_blank');
     };
