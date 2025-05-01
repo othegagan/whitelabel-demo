@@ -16,17 +16,17 @@ export default function Testimonials() {
                     {[
                         {
                             name: 'Sarah Johnson',
-                            location: 'New York',
+                            location: 'Austin',
                             quote: 'The booking process was incredibly smooth, and the car was in perfect condition. Will definitely use this service again!'
                         },
                         {
                             name: 'Michael Chen',
-                            location: 'San Francisco',
+                            location: 'Austin',
                             quote: 'Great selection of vehicles and competitive prices. The customer service was exceptional when I needed to extend my rental.'
                         },
                         {
                             name: 'Emma Williams',
-                            location: 'Chicago',
+                            location: 'Austin',
                             quote: "I've rented from several companies before, but this was by far the best experience. Clean cars and no hidden fees!"
                         }
                     ].map((testimonial, index) => (
