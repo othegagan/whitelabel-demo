@@ -10,12 +10,12 @@ const data = [
     {
         name: 'SUV',
         image: 'https://www.topgear.com/sites/default/files/2024/02/2023-GMC-Yukon-Denali-Ultimate-exteriorx3000.jpg',
-        subtext: 'Comming soon'
+        subtext: 'Coming soon'
     },
     {
         name: 'Luxury',
         image: 'https://www.topgear.com/sites/default/files/news-listicle/image/2023/09/LEAD.jpg',
-        subtext: 'Comming soon'
+        subtext: 'Coming soon'
     }
 ];
 
